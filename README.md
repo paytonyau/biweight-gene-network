@@ -5,6 +5,35 @@ biweight (Gene differential coexpression analysis based on biweight correlation 
 
 (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4271563/)
 
+Start
+|
+v
+Input gene expression data
+|
+v
+Calculate biweight midcorrelation coefficients between all gene pairs
+|
+v
+Filter out non-informative correlation pairs using the 'half-thresholding' strategy
+|
+v
+Calculate differential coexpression value of gene
+|
+v
+Select differentially coexpressed gene pairs
+|
+v
+Apply maximum clique analysis to select gene subset
+|
+v
+Analyze functional enrichment of selected gene subset
+|
+v
+End
+This flowchart shows that the analysis workflow starts with input gene expression data. The next step is to calculate the biweight midcorrelation coefficients between all gene pairs. These coefficients are then used to filter out non-informative correlation pairs using the 'half-thresholding' strategy. The differential coexpression value of each gene is then calculated. The next step is to select differentially coexpressed gene pairs. These gene pairs are then used to apply maximum clique analysis to select a gene subset. The final step is to analyze the functional enrichment of the selected gene subset.
+
+
+
 Machine learning-based identification of genetic interactions from heterogeneous gene expression profiles (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0201056)
 
 GNE (https://github.com/kckishan/GNE)
