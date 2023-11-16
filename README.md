@@ -1,6 +1,10 @@
 
 
 ##### Note
+biweight (Gene differential coexpression analysis based on biweight correlation and maximum clique)
+
+(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4271563/)
+
 Machine learning-based identification of genetic interactions from heterogeneous gene expression profiles (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0201056)
 
 GNE (https://github.com/kckishan/GNE)
