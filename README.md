@@ -1,63 +1,27 @@
+# Gene differential coexpression analysis based on biweight correlation and maximum clique
+
+In this project, Zheng et al. present a robust approach to differential coexpression analysis in gene expression data. They employ Biweight Midcorrelation, a measure less sensitive to outliers than the traditional Pearson correlation, to assess similarity between gene expression profiles. Their method incorporates a ‘half-thresholding’ strategy to eliminate non-informative correlation pairs, thus enabling the calculation of the differential coexpression value for each gene. Experimental results on simulated data demonstrate that their approach outperforms three existing differential coexpression analysis methods[^1]. 
+
+ [^1]:Zheng, C. H., Yuan, L., Sha, W., & Sun, Z. L. (2014). Gene differential coexpression analysis based on biweight correlation and maximum clique. _BMC bioinformatics_, _15 Suppl 15_(Suppl 15), S3. https://doi.org/10.1186/1471-2105-15-S15-S3
 
 
-##### Note
-biweight (Gene differential coexpression analysis based on biweight correlation and maximum clique)
+Here is a brief description of each step in the analysis from the authors:
+1. **Input gene expression data**: This is the initial step where the gene expression data is collected and prepared for analysis.
 
-(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4271563/)
+2. **Calculate biweight midcorrelation coefficients between all gene pairs**: Biweight midcorrelation is a measure of similarity between gene expression profiles that is less sensitive to outliers than the commonly used Pearson correlation.
 
-Start
-|
-v
-Input gene expression data
-|
-v
-Calculate biweight midcorrelation coefficients between all gene pairs
-|
-v
-Filter out non-informative correlation pairs using the 'half-thresholding' strategy
-|
-v
-Calculate differential coexpression value of gene
-|
-v
-Select differentially coexpressed gene pairs
-|
-v
-Apply maximum clique analysis to select gene subset
-|
-v
-Analyze functional enrichment of selected gene subset
-|
-v
-End
-This flowchart shows that the analysis workflow starts with input gene expression data. The next step is to calculate the biweight midcorrelation coefficients between all gene pairs. These coefficients are then used to filter out non-informative correlation pairs using the 'half-thresholding' strategy. The differential coexpression value of each gene is then calculated. The next step is to select differentially coexpressed gene pairs. These gene pairs are then used to apply maximum clique analysis to select a gene subset. The final step is to analyze the functional enrichment of the selected gene subset.
+3. **Filter out non-informative correlation pairs using the 'half-thresholding' strategy**: This strategy keeps a link in both coexpression networks if at least one of the two coexpression values exceeds the threshold.
+
+4. **Calculate differential coexpression value of gene**: This step involves calculating the change in coexpression of a gene across different conditions or time points.
+
+5. **Select differentially coexpressed gene pairs**: This step involves identifying gene pairs whose coexpression patterns differ significantly between conditions or over time.
+
+6. **Apply maximum clique analysis to select gene subset**: Maximum clique analysis is a method used to find the largest subset of genes that are all directly connected to each other in the coexpression network.
 
 
-
-Machine learning-based identification of genetic interactions from heterogeneous gene expression profiles (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0201056)
-
-GNE (https://github.com/kckishan/GNE)
-
-network correlation (https://github.com/leekgroup/networks_correction)
-
-Deep Learning to Analyze RNA-Seq Gene Expression Data (https://core.ac.uk/download/pdf/132743527.pdf)
-
-Graph Machine Learning in Genomic Prediction (https://medium.com/stellargraph/graph-machine-learning-in-genomic-prediction-56c93c362556)
-
-A machine learning tutorial: applications of the Bioconductor MLInterfaces package to gene expression data (https://bioconductor.org/packages/devel/bioc/vignettes/MLInterfaces/inst/doc/MLprac2_2.pdf)
+#### The package is under development. 
 
 
-https://github.com/Zhangxf-ccnu/DiffGraph
-
-http://statmath.wu.ac.at/research/friday/resources_WS0708_SS08/igraph.pdf
-
-https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005694
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5838217/
+"BioTranslate: Turning Bioscience Publications into Applications" is a project dedicated to bridging the gap between theoretical knowledge and practical application in the field of biosciences. Despite the wealth of models and formulas presented in scientific publications, there is often a lack of progression into programming packages that can be utilised by others. This project aims to address this issue, transforming valuable scientific findings into practical tools. With a focus on biosciences, BioTranslate seeks to provide valuable insights for biological and clinical research. By translating these theoretical models into practical applications, we can facilitate a more comprehensive understanding of the field and contribute to the advancement of bioscience research. 
 
 
-Single-cell meta-analysis of SARS-CoV-2 entry genes across tissues and demographics
-
-Learn R | SVM of Data Mining（五）(https://zhuanlan.zhihu.com/p/25188759)
-
-http://qiubio.com/new/book/chapter-06/#%E7%AC%AC%E4%BA%94%E7%AB%A0-atac-seq%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90chapter-5-atac-seq-data-analysis
