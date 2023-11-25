@@ -1,6 +1,6 @@
-# Based on the equation number 5 (Biweight midcorrelation)
+# Biweight midcorrelation
 
-# bicolor(x, y) is the function we’re defining.
+# bicol(x, y) is the function we’re defining.
 # x and y are the input vectors.
 # x_i and y_i are the elements of x and y, respectively.
 # m is the length of the vectors.
@@ -11,7 +11,7 @@
 # The square symbol ^2 denotes the square of a number.
 
 
-bicolor <- function(x, y) {
+bicol <- function(x, y) {
   # Ensure x and y are vectors of the same length
   if (length(x) != length(y)) {
     stop("x and y must be vectors of the same length")
@@ -30,7 +30,7 @@ bicolor <- function(x, y) {
   numerator <- sum((x - med_x) * sapply(1:length(x), w_x) * (y - med_y) * sapply(1:length(y), w_y))
   denominator <- sqrt(sum((x - med_x) * sapply(1:length(x), w_x))^2) * sqrt(sum((y - med_y) * sapply(1:length(y), w_y))^2)
 
-  # Calculate and return bicolor
-  bicolor <- numerator / denominator
-  return(bicolor)
+  # Calculate and return bicol
+  bicol <- numerator / denominator
+  return(bicol)
 }
