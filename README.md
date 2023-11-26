@@ -10,18 +10,20 @@ Below is the code based on the formulas from the papers
 
 [1. **Biweight midcorrelation coefficients Function**](https://github.com/paytonyau/biweight-gene-network/blob/main/R/bicol.R)
 
-[2. **Functions for the 'half-thresholding' method (BMHT)**](https://github.com/paytonyau/biweight-gene-network/blob/main/R/BHMT.R)
+[2. **Functions for the 'half-thresholding'**](https://github.com/paytonyau/biweight-gene-network/blob/main/R/BHMT.R)
 
-[3. **Functions for the Maximum Clique Concept & k-Clique Algorithm (BMKC)**](https://github.com/paytonyau/biweight-gene-network/tree/main/R/BMKC.R)
+[3. **Functions for the Maximum Clique Concept & k-Clique Algorithm**](https://github.com/paytonyau/biweight-gene-network/tree/main/R/BMKC.R)
 
 ### Example
-[4. **Pending**]
 
+[4. **BGMT**](https://github.com/paytonyau/biweight-gene-network/blob/main/example_BMHT.R)
+
+[5**BMKC(Pending)**]
 ### The package is still under development
 
 
 #### Disclaimer Statement
-The BHMT method[^1] was obtained through [the Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license, and the BMKC method[^2] was retrieved via [the Attribution 3.0 International (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/). These licenses are based on the corresponding journals' copyright statements.
+The formula from the biweight midcorrelation and half-thresholding (BMHT) algorithm was obtained from the paper[^1] through [the Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license, and the biweight midcorrelation and k-clique (BMKC) algorithm was retrieved from the paper[^2] via [the Attribution 3.0 International (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/). These licenses are based on the corresponding journals' copyright statements.
 
 #### Additional reading
 

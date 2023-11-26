@@ -1,5 +1,7 @@
 #### The 'biweight midcorrelation and half-thresholding' method (BMHT)
 #############  Based on the formula 6 ############# 
+# calculates the average coexpression change between a gene and its informative coexpression genes
+
 d_ci <- function(x, y) {
   # Ensure x and y are vectors of the same length
   if (length(x) != length(y)) {
@@ -16,6 +18,7 @@ d_ci <- function(x, y) {
 }
 
 ############# The permutation p-value (Based on the formula 7) ############# 
+# M = permutations
 
 indicator_function <- function(x, y, M, d_c) {
   # Ensure x and y are vectors of the same length
@@ -25,31 +28,18 @@ indicator_function <- function(x, y, M, d_c) {
   # Calculate the sum of indicator function values
   sum_vector <- rep(0, M)
   for (m in 1:M) {
-    sum_vector[m] <- as.numeric(d_c(x[m, , drop = FALSE], 
-                                    y[m, , drop = FALSE]) >= d_c(x, y))
+    # Permute the vectors
+    x_perm <- sample(x)
+    y_perm <- sample(y)
+    # Calculate the differential coexpression for the permuted vectors
+    d_c_perm <- d_ci(x_perm, y_perm)
+    # Update the indicator function value
+    sum_vector[m] <- as.numeric(d_c_perm >= d_c)
   }
   # Calculate the final result
   result <- sum(sum_vector) / M
   return(result)
 }
-
-####### example use
-## Set the seed for reproducibility
-# set.seed(123)
-
-# Create two 100x100 matrices of random gene expressions
-# X <- matrix(rnorm(10000), nrow=100, ncol=100)
-# Y <- matrix(rnorm(10000), nrow=100, ncol=100)
-
-# Name the rows and columns
-# rownames(X) <- paste0("Gene_", 1:100)
-# colnames(X) <- paste0("Sample_", 1:100)
-# rownames(Y) <- paste0("Gene_", 1:100)
-# colnames(Y) <- paste0("Sample_", 1:100)
-
-## Call the function
-# NOTE: 100 = number of genes, d_ci is the BMHT function
-# indicator_function_result <- indicator_function(X, Y, 100, d_ci)
 
 ################## The maximum clique analysis (Based on the formula 8) ################
 
